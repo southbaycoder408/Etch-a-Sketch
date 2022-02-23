@@ -1,22 +1,32 @@
-//creates div container to hold square div 16x16 grid 
+//creates div container that will hold square div 16x16 grid 
 const container = document.createElement('div');
 //adds div to body tag
 document.body.appendChild(container);
 //add class "container" to container div
 container.classList.add('container');
 
-function createSquare() 
-{
-    let i = 0;
-    for(i; i<256; i++){
-    //creates div which will be the squares in container
-    const square = document.createElement('div');
-    //adds square class to square div
-    square.classList.add('square');
-    square.style.border = "1px solid black";
-    square.style.padding = "5px 5px 5px";
-    //adds square div to container 
-    container.appendChild(square);
+
+
+function createSquare() {
+    let row = 1;
+    for (row; row <= 16; row++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        container.appendChild(row);
+
+        let box = 1;
+
+        for (box; box <= 16; box++) {
+            //creates div which will be the squares in container
+            const square = document.createElement('div');
+            //adds square class to square div
+            square.classList.add('square');
+
+
+            square.textContent = "Square #" + box;
+            //adds square div to container 
+            row.appendChild(square);
+        }
     }
 }
 
