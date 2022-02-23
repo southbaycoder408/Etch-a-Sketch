@@ -31,3 +31,14 @@ function createSquare() {
 }
 
 createSquare();
+
+const hover = document.querySelectorAll('.square');
+
+hover.forEach((square)=>{
+    square.addEventListener('mouseover',(event)=>{
+        //highlights the text of each class square to target color
+        event.target.style.backgroundColor = "blue";
+        //setimeout resets the color back to regular after 5 seconds
+        setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
+    })
+})
