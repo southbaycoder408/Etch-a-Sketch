@@ -1,3 +1,10 @@
+
+
+const button = document.createElement('button');
+button.textContent = "RESET";
+document.body.appendChild(button);
+
+
 //creates div container that will hold square div 16x16 grid 
 const container = document.createElement('div');
 //adds div to body tag
@@ -7,6 +14,9 @@ container.classList.add('container');
 
 
 
+
+//function that creates 16 "row" elements and 16"square" elements inside that...
+//designed this way to make use of flexbox and organization of square
 function createSquare() {
     let row = 1;
     for (row; row <= 16; row++) {
@@ -39,6 +49,7 @@ hover.forEach((square)=>{
         //highlights the text of each class square to target color
         event.target.style.backgroundColor = "blue";
         //setimeout resets the color back to regular after 5 seconds
-        setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
+
+        //setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
     })
 })
