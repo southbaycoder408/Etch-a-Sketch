@@ -1,9 +1,14 @@
-
-
 const button = document.createElement('button');
 button.textContent = "RESET";
 document.body.appendChild(button);
 
+
+button.addEventListener('click', ()=> {
+    allSquare.forEach((square) =>{
+        square.style.backgroundColor = "";
+    })
+        
+});
 
 //creates div container that will hold square div 16x16 grid 
 const container = document.createElement('div');
@@ -33,7 +38,8 @@ function createSquare() {
             square.classList.add('square');
 
 
-            square.textContent = "Square #" + box;
+            //square.textContent = "Square #" + box;
+
             //adds square div to container 
             row.appendChild(square);
         }
@@ -42,14 +48,41 @@ function createSquare() {
 
 createSquare();
 
-const hover = document.querySelectorAll('.square');
+//creates variable that stores nodelist of "square" classes
+const allSquare = document.querySelectorAll('.square');
 
-hover.forEach((square)=>{
-    square.addEventListener('mouseover',(event)=>{
+
+allSquare.forEach((square) => {
+    square.addEventListener('mouseover', (event) => {
         //highlights the text of each class square to target color
         event.target.style.backgroundColor = "blue";
         //setimeout resets the color back to regular after 5 seconds
-
         //setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
     })
-})
+});
+
+
+
+// const highlightFn = function (event) {
+//     //highlights the text of each class square to target color
+//     event.target.style.backgroundColor = "blue";
+//     //setimeout resets the color back to regular after 5 seconds
+
+//     //setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
+// };
+
+
+
+// const callbackFn = function(square) {
+//     square.addEventListener('mouseover', highlightFn);
+// };
+
+// const highlightFn = (square) => {
+//     square.addEventListener('mouseover', (event) => {
+//         //highlights the text of each class square to target color
+//         event.target.style.backgroundColor = "blue";
+//         //setimeout resets the color back to regular after 5 seconds
+
+//         //setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
+//     })
+// };

@@ -1,5 +1,5 @@
 .square {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     height: 60px;
     width: 60px;
     
@@ -19,10 +19,12 @@ body{
 }
 
 .container {
+    border: 1px solid black;
     display :flex;
     flex-direction: column;
     justify-content: space-between ;
     align-items: center;
+    width: 960px;
 }
 
 .button{
