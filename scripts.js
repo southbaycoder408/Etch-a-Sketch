@@ -2,12 +2,12 @@ const button = document.createElement('button');
 button.textContent = "RESET";
 document.body.appendChild(button);
 
-
 button.addEventListener('click', ()=> {
     allSquare.forEach((square) =>{
         square.style.backgroundColor = "";
-    })
         
+    })
+    prompt("Please input the the # of squares per side for new canvas", "16 squares";
 });
 
 //creates div container that will hold square div 16x16 grid 
@@ -16,9 +16,6 @@ const container = document.createElement('div');
 document.body.appendChild(container);
 //add class "container" to container div
 container.classList.add('container');
-
-
-
 
 //function that creates 16 "row" elements and 16"square" elements inside that...
 //designed this way to make use of flexbox and organization of square
@@ -51,7 +48,6 @@ createSquare();
 //creates variable that stores nodelist of "square" classes
 const allSquare = document.querySelectorAll('.square');
 
-
 allSquare.forEach((square) => {
     square.addEventListener('mouseover', (event) => {
         //highlights the text of each class square to target color
@@ -60,8 +56,6 @@ allSquare.forEach((square) => {
         //setTimeout(function (){event.target.style.backgroundColor ="";}, 500);
     })
 });
-
-
 
 // const highlightFn = function (event) {
 //     //highlights the text of each class square to target color
