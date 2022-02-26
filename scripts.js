@@ -9,10 +9,15 @@ button.addEventListener('click', () => {
         square.style.backgroundColor = "";
 
     })
-    squarePerSide = prompt("Please input the the # of squares per side for new canvas");
-    Number(squarePerSide);
-    console.log(squarePerSide);
-    createSquare();
+    squarePerSide = prompt("Please input a number between 0 through 100 for the # of squares per side for new canvas.");
+    if(squarePerSide>100){
+        alert("Sorry, your number exceeds 100, please choose again.")
+    }
+    else{
+        Number(squarePerSide);
+        console.log(squarePerSide);
+        createSquare();
+    }
 });
 
 //creates div container that will hold square div 16x16 grid 
