@@ -1,9 +1,10 @@
 const button = document.createElement('button');
-button.textContent = "RESET";
+button.textContent = "PRESS ME!!";
 document.body.appendChild(button);
 
+//this variable and event listener will select all square classes and erase the color and classes
+//then it will invoke createSquareFunction to regenerate canvas based off user input
 let squarePerSide;
-
 button.addEventListener('click', () => {
     allSquare.forEach((square) => {
         square.style.backgroundColor = "";
